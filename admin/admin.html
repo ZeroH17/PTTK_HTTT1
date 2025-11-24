@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Fruit Staff | Dashboard</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS tách riêng -->
+  <link rel="stylesheet" href="">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <h2>🍊 FRUIT STAFF</h2>
+  <ul>
+    <li><a href="dashboard.html" class="active">Tổng quan</a></li>
+    <li><a href="manage_products.html">Sản phẩm</a></li>
+    <li><a href="manage_orders.html">Đơn hàng</a></li>
+    <li><a href="manage_users.html">Khách hàng</a></li>
+    <li><a href="#" class="logout-btn">Đăng xuất</a></li>
+  </ul>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+  <h1>Thống kê nhanh</h1>
+
+  <div class="dashboard-grid">
+    <button class="stat-card" id="btn_products">
+      <h3>Tổng sản phẩm</h3>
+      <div class="stat-number" id="m_products">0</div>
+    </button>
+
+    <button class="stat-card" id="btn_orders">
+      <h3>Tổng đơn hàng</h3>
+      <div class="stat-number" id="m_orders">0</div>
+    </button>
+
+    <button class="stat-card" id="btn_bestFruit">
+      <h3>Trái cây bán chạy nhất</h3>
+      <div class="stat-number" id="m_users">0</div>
+    </button>
+
+    <div class="stat-card">
+      <h3>Báo cáo doanh thu</h3>
+
+      <div class="stat-number" id="m_revenue">0</div>
+
+      <button id="btn_revenue">Xem biểu đồ</button>
+    </div>
+  </div>
+</main>
+
+<!-- CHART PANEL -->
+<div class="chart-container">
+    <div class="chart-header">
+        <h2>Biểu đồ doanh thu</h2>
+        <div class="chart-controls">
+            <button class="range-btn active" data-range="day">Ngày</button>
+            <button class="range-btn" data-range="week">Tuần</button>
+            <button class="range-btn" data-range="month">Tháng</button>
+            <button class="range-btn" data-range="year">Năm</button>
+        </div>
+    </div>
+
+    <canvas id="dashboardChart"></canvas>
+</div>
+
+<!-- JS -->
+<script src="../js/dashboard.js" defer></script>
+
+</body>
+</html>

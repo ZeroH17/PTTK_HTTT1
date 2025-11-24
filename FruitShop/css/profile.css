@@ -1,0 +1,407 @@
+/* ===============================
+   RESET + FONT
+================================= */
+body {
+  background: #f6fff7;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+
+/* ===============================
+   CONTAINER
+================================= */
+.account-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 40px auto;
+  gap: 30px;
+}
+
+
+/* ===============================
+   SIDEBAR
+================================= */
+.sidebar {
+  width: 260px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+.sidebar h3 {
+  font-size: 20px;
+  margin-bottom: 18px;
+  color: #178b34;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-item {
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: 0.25s;
+}
+
+.menu-item:hover {
+  background: #e8f8ec;
+}
+
+.menu-item.active {
+  background: #ff4500;
+  color: #fff;
+}
+
+
+/* ===============================
+   CONTENT AREA
+================================= */
+.content {
+  flex: 1;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+.section.hidden { display: none; }
+
+
+/* ===============================
+   PROFILE CARD
+================================= */
+.profile-container {
+  width: 480px;
+  background: #fff;
+  padding: 22px 28px;
+  border-radius: 14px;
+  margin: auto;
+  box-shadow: 0 4px 12px rgba(0,160,80,0.12);
+  border: 1px solid #e3f6ea;
+}
+
+.profile-container h2 {
+  font-size: 21px;
+  font-weight: 700;
+  color: #178b34;
+  margin-bottom: 20px;
+}
+
+
+/* ===============================
+   FORM ROWS
+================================= */
+.form-row {
+  margin-bottom: 16px;
+}
+
+.form-row label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 6px;
+  display: block;
+  font-weight: 500;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 9px 12px;
+  font-size: 14px;
+  border: 1px solid #c9e9d1;
+  border-radius: 10px;
+  background: #fafffb;
+  transition: 0.25s;
+}
+
+.input-group input:focus {
+  border-color: #2fb65e;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(47,182,94,0.15);
+}
+
+
+/* ===============================
+   BUTTONS
+================================= */
+.edit-btn {
+  padding: 7px 14px;
+  border: none;
+  background: #2fb65e;
+  color: white;
+  font-size: 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.edit-btn:hover {
+  background: #24964c;
+}
+
+.save-section {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.save-btn {
+  background: #178b34;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.25s;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(0,160,80,0.3);
+}
+
+.save-btn:hover {
+  background: #0f6d28;
+}
+
+
+/* ===============================
+   ORDER TABLE
+================================= */
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+.order-table th,
+.order-table td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+}
+
+.order-table th {
+  background: #e9f9ee;
+  font-weight: 700;
+  color: #178b34;
+}
+
+.order-table tr:hover {
+  background: #f8fff9;
+}
+
+
+/* ===============================
+   STATUS COLORS
+================================= */
+.status-tag {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width: 700px) {
+  .account-container { flex-direction: column; }
+  .sidebar { width: 100%; }
+  .profile-container { width: 100%; }
+}
+
+
+/* ===================== MODAL OVERLAY ===================== */
+#detailModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.25s ease;
+}
+
+/* ===================== MODAL BOX ===================== */
+#detailModal .modal-content {
+  background: #fff;
+  padding: 28px;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: slideUp 0.28s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ===================== TITLE ===================== */
+#detailModal h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+#detailModal h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* ===================== CLOSE BUTTON ===================== */
+#detailModal .close-btn {
+  margin-top: 22px;
+  padding: 10px 20px;
+  font-size: 15px;
+  border: none;
+  background: #ff5252;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+#detailModal .close-btn:hover {
+  background: #e04747;
+}
+
+/* ===================== TABLE STYLE ===================== */
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.order-table thead {
+  background: #4CAF50;
+  color: white;
+}
+
+.order-table th,
+.order-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.order-table tbody tr:hover {
+  background: #f7f7f7;
+}
+
+/* ===================== ANIMATIONS ===================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(25px);
+    opacity: 0.7;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ====== TAB ====== */
+.tab-item.active {
+  background-color: #007bff;
+  color: #fff;
+}
+.tab-section.hidden {
+  display: none;
+}
+.tab-section.active {
+  display: block;
+}
+
+/* ====== INPUT FORM ====== */
+input[disabled] {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+/* ====== BUTTON ====== */
+.edit-btn, .save-btn, .detail-btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+.edit-btn { background-color: #ffc107; color: #fff; }
+.save-btn { background-color: #28a745; color: #fff; }
+.detail-btn { background-color: #17a2b8; color: #fff; }
+
+/* ====== TRẠNG THÁI ====== */
+.status.pending { color: #ff9800; font-weight: bold; }
+.status.shipping { color: #2196f3; font-weight: bold; }
+.status.completed { color: #4caf50; font-weight: bold; }
+
+/* ====== MODAL ====== */
+.modal {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+.modal-content {
+  background:white;
+  border-radius:12px;
+  padding:30px;
+  max-width:700px;
+  width:90%;
+  max-height:80vh;
+  overflow-y:auto;
+}
+.modal-content table {
+  width:100%;
+  border-collapse:collapse;
+}
+.modal-content table th, 
+.modal-content table td {
+  border:1px solid #ddd;
+  padding:8px;
+  text-align:left;
+}
+.modal-content button.close-modal {
+  margin-top:15px;
+  background:#dc3545;
+  color:#fff;
+  border:none;
+  padding:6px 12px;
+  border-radius:4px;
+  cursor:pointer;
+}
+
+/* ====== CHÚ THÍCH ====== */
+.no-order {
+  text-align:center;
+  color:#999;
+  padding:10px 0;
+}

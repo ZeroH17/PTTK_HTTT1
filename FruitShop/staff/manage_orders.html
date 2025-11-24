@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Fruit Staff | Quản lý đơn hàng</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/staff.css">
+</head>
+
+<body>
+  <aside class="sidebar">
+    <h2>🍊 FRUIT STAFF</h2>
+    <ul>
+      <li><a href="dashboard.html">Tổng quan</a></li>
+      <li><a href="manage_products.html">Sản phẩm</a></li>
+      <li><a href="manage_orders.html">Đơn hàng</a></li>
+      <li><a href="manage_users.html">Khách hàng</a></li>
+      <li><a href="#" class="logout-btn">Đăng xuất</a></li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <div class="page-header">
+      <h1>Quản lý đơn hàng</h1>
+    </div>
+    <div class="toolbar">
+      <input type="text" id="searchOrder" placeholder=" Tìm đơn hàng theo ID...">
+      <label for="startDate" style="margin-top: 10px;">Từ ngày:</label>
+      <input type="date" id="startDate">
+      <label for="endDate" style="margin-top: 10px;">Đến ngày:</label>
+      <input type="date" id="endDate">
+      <select id="filterStatus">
+        <option value="">Lọc theo trạng thái</option>
+        <option value="Chờ xử lý">Chờ xử lý</option>
+        <option value="Đang giao">Đang giao</option>
+        <option value="Hoàn tất">Hoàn tất</option>
+      </select>
+    </div>
+    <div class="table-box">
+      <table id="olist">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Ngày</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- JS render -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Modal chi tiết hóa đơn -->
+  <div id="invoiceModal" class="modal">
+    <div class="modal-content invoice-box">
+
+      <h2>Chi tiết hóa đơn</h2>
+
+      <div class="info-row">
+        <p><strong>Mã hóa đơn:</strong> <span id="ct_mahd"></span></p>
+        <p><strong>Mã đơn hàng:</strong> <span id="ct_madh"></span></p>
+        <p><strong>Ngày xuất:</strong> <span id="ct_ngay"></span></p>
+        <p><strong>Tổng tiền:</strong> <span id="ct_tongtien"></span></p>
+        <p><strong>Khách hàng:</strong> <span id="ct_info"></span></p>
+      </div>
+
+      <h3>Danh sách sản phẩm</h3>
+      <div class="table-scroll">
+        <table class="detail-table">
+          <thead>
+            <tr>
+              <th>Mã trái cây</th>
+              <th>Sản phẩm</th>
+              <th>Số lượng</th>
+              <th>Giá</th>
+            </tr>
+          </thead>
+          <tbody id="detailBody"></tbody>
+        </table>
+      </div>
+
+      <button class="close-btn" onclick="closeInvoiceModal()">Đóng</button>
+    </div>
+  </div>
+
+  <script src="../js/ManageOrder.js" defer></script>
+  <script src="../js/staff.js" defer></script>
+</body>
+</html>

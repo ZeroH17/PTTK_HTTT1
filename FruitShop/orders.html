@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đơn hàng của bạn</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-flex">
+    <div class="logo">
+      <img src="assets/img/logo.png">
+      <span>FastFood</span>
+    </div>
+
+    <nav class="main-nav">
+      <a href="index.html">Trang chủ</a>
+      <a href="sanpham.html">Sản phẩm</a>
+      <a href="profile.html">Tài khoản</a>
+      <a href="orders.html" class="active">Đơn hàng</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <h1 class="page-title">Đơn hàng của bạn</h1>
+  <p class="page-sub">Danh sách đơn hàng đã mua</p>
+</section>
+
+<!-- DANH SÁCH ĐƠN -->
+<section class="product-page">
+  <div class="container">
+
+    <table style="width:100%; border-collapse: collapse;">
+      <thead>
+        <tr style="background:#e8f5e9; color:#2e7d32;">
+          <th style="padding:12px; border-bottom:1px solid #ddd;">Mã đơn</th>
+          <th style="padding:12px; border-bottom:1px solid #ddd;">Ngày</th>
+          <th style="padding:12px; border-bottom:1px solid #ddd;">Tổng tiền</th>
+          <th style="padding:12px; border-bottom:1px solid #ddd;">Trạng thái</th>
+        </tr>
+      </thead>
+
+      <tbody id="orderList"></tbody>
+    </table>
+
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const orders = JSON.parse(localStorage.getItem("orders") || "[]");
+    const orderList = document.getElementById("orderList");
+
+    if (orders.length === 0) {
+      orderList.innerHTML = `
+        <tr><td colspan="4" style="text-align:center; padding:20px;">Không có đơn hàng nào!</td></tr>`;
+      return;
+    }
+
+    orders.forEach(order => {
+      orderList.innerHTML += `
+        <tr>
+          <td style="padding:12px;">${order.id}</td>
+          <td style="padding:12px;">${order.date}</td>
+          <td style="padding:12px; color:#2e7d32; font-weight:600;">${order.total}₫</td>
+          <td style="padding:12px;">
+            <span class="tag ${order.status === 'Hủy' ? 'low-stock' : ''}">
+              ${order.status}
+            </span>
+          </td>
+        </tr>
+      `;
+    });
+  });
+</script>
+
+</body>
+</html>

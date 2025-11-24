@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Fruit Staff | Quản lý sản phẩm</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/staff.css">
+  <script src="../js/staff.js" defer></script>
+</head>
+
+<body>
+
+<aside class="sidebar">
+  <h2>🍊 FRUIT STAFF</h2>
+  <ul>
+    <li><a href="dashboard.html">Tổng quan</a></li>
+    <li><a href="manage_products.html">Sản phẩm</a></li>
+    <li><a href="manage_orders.html">Đơn hàng</a></li>
+    <li><a href="manage_users.html">Khách hàng</a></li>
+    <li><a href="#" class="logout-btn">Đăng xuất</a></li>
+  </ul>
+</aside>
+
+
+
+<main class="main">
+
+  <div class="page-header">
+    <h1>Quản lý sản phẩm</h1>
+    <button id="addProductBtn" class="btn-primary">+ Thêm sản phẩm</button>
+  </div>
+
+  <div class="toolbar">
+    <input type="text" id="searchProduct" placeholder="🔍 Tìm sản phẩm theo tên...">
+    <select id="filterProduct">
+      <option value="">Lọc theo loại trái cây</option>
+      <option value="Cam">Cam</option>
+      <option value="Táo">Táo</option>
+      <option value="Nho">Nho</option>
+      <option value="Dưa hấu">Dưa hấu</option>
+    </select>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+    <!-- JS render sản phẩm -->
+  </div>
+
+</main>
+
+<!-- MODAL SẢN PHẨM -->
+<div class="modal" id="productModal">
+  <div class="modal-content">
+    <h2>Thông tin sản phẩm</h2>
+
+    <label>Tên sản phẩm</label>
+    <input id="pname">
+
+    <label>Giá (VNĐ)</label>
+    <input id="pprice" type="number">
+
+    <label>Ảnh sản phẩm (link)</label>
+    <input id="pimage">
+
+    <label>Mô tả</label>
+    <textarea id="pdesc" rows="3"></textarea>
+
+    <div class="modal-actions">
+      <button class="btn-primary" id="saveProductBtn">Lưu</button>
+      <button class="btn-cancel" id="cancelProductBtn">Hủy</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

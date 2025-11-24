@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Fruit Staff | Quản lý khách hàng</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/staff.css">
+  <script src="../js/staff.js" defer></script>
+</head>
+
+<body>
+
+<aside class="sidebar">
+  <h2>🍊 FRUIT STAFF</h2>
+  <ul>
+    <li><a href="dashboard.html">Tổng quan</a></li>
+    <li><a href="manage_products.html">Sản phẩm</a></li>
+    <li><a href="manage_orders.html">Đơn hàng</a></li>
+    <li><a href="manage_users.html">Khách hàng</a></li>
+    <li><a href="#" class="logout-btn">Đăng xuất</a></li>
+  </ul>
+</aside>
+
+
+<main class="main">
+
+  <div class="page-header">
+    <h1>Quản lý khách hàng</h1>
+  </div>
+
+  <div class="toolbar">
+    <input type="text" id="searchUser" placeholder="🔍 Tìm khách hàng theo tên...">
+  </div>
+
+  <div class="table-box">
+    <table id="ulist">
+      <thead>
+        <tr>
+          <th>Tên</th>
+          <th>Email</th>
+          <th>Vai trò</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- JS hiển thị -->
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+</body>
+</html>

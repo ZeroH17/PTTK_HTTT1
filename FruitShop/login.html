@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng nhập | Cửa Hàng Trái Cây</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="login-header">
+  <div class="container header-flex">
+    <div class="logo-login">
+      <img src="assets/img/logo.png" alt="Logo" />
+      <span>Trái Cây Tươi</span>
+    </div>
+  </div>
+</header>
+
+<section class="auth-section">
+  <div class="auth-container">
+    
+    <!-- LOGIN -->
+    <div class="auth-card show" id="loginForm">
+      <h2>Đăng nhập</h2>
+      <form action="#" method="post" class="auth-form">
+        <input type="text" placeholder="Tên đăng nhập hoặc Email" required />
+        <input type="password" placeholder="Mật khẩu" required />
+        <button type="submit" class="btn-primary full">Đăng nhập</button>
+      </form>
+      <p class="auth-switch">Chưa có tài khoản?
+        <a href="#" id="switchToRegister">Đăng ký ngay</a>
+      </p>
+    </div>
+
+    <!-- REGISTER -->
+    <div class="auth-card hidden" id="registerForm">
+      <h2>Đăng ký</h2>
+      <form action="#" method="post" class="auth-form">
+        <input type="text" placeholder="Họ tên" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Mật khẩu" required />
+        <button type="submit" class="btn-primary full">Đăng ký</button>
+      </form>
+      <p class="auth-switch">Đã có tài khoản?
+        <a href="#" id="switchToLogin">Đăng nhập</a>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<script src="js/main.js"></script>
+</body>
+</html>

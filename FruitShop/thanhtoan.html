@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thanh toán — Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/payment.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="center">
+      <div class="icon">
+        <!-- simple card icon -->
+        <svg width="36" height="24" viewBox="0 0 36 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="3" width="34" height="18" rx="2" stroke="#6b6f73" stroke-width="1.6" fill="#fff"/>
+          <rect x="4" y="8" width="6" height="2" rx="1" fill="#6b6f73"/>
+          <rect x="26" y="8" width="6" height="2" rx="1" fill="#6b6f73"/>
+        </svg>
+      </div>
+      <h1>Thanh toán</h1>
+      <p class="lead">Vui lòng kiểm tra thông tin Khách hàng, thông tin Giỏ hàng trước khi Đặt hàng.</p>
+    </header>
+
+    <!-- left: customer info -->
+    <section class="card form-section">
+      <h3>Thông tin khách hàng</h3>
+      <div>
+        <label>Họ tên</label>
+        <input id="fullname" type="text" placeholder="Họ và tên" value="" />
+
+        <label>Giới tính</label>
+        <div class="radio-group">
+          <label class="radio-item"><input type="radio" name="gender" value="nam" checked> Nam</label>
+          <label class="radio-item"><input type="radio" name="gender" value="nu"> Nữ</label>
+        </div>
+
+        <label>Địa chỉ</label>
+        <input id="address" type="text" placeholder="Địa chỉ nhận hàng" value="" />
+
+        <label>Điện thoại</label>
+        <input id="phone" type="text" placeholder="Số điện thoại" value="" />
+
+        <label>Email</label>
+        <input id="email" type="email" placeholder="Email (tuỳ chọn)" value="" />
+
+        <h3 style="margin-top:18px">Hình thức thanh toán</h3>
+        <div class="radio-group">
+          <label class="radio-item"><input type="radio" name="pay" value="cash" checked> Tiền mặt</label>
+          <label class="radio-item"><input type="radio" name="pay" value="bank"> Chuyển khoản</label>
+          <label class="radio-item"><input type="radio" name="pay" value="cod"> Ship COD</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- right: cart -->
+    <aside>
+      <div class="card">
+        <div class="cart-title">
+          <div style="font-weight:600">Giỏ hàng</div>
+          <div class="badge" id="cartCount"></div>
+        </div>
+
+        <div class="cart-list" id="cartList">
+          <!-- JS fills items -->
+        </div>
+
+        <div class="cart-total">
+          <div>Tổng thành tiền</div>
+          <div id="cartTotal">0 ₫</div>
+        </div>
+
+        <div class="coupon">
+          <input id="couponCode" placeholder="Mã khuyến mãi" />
+          <button id="applyCoupon">Xác nhận</button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="checkout-footer">
+      <button id="placeOrder" class="btn-order">Đặt hàng</button>
+    </div>
+  </div>
+  <script src="js/payment.js"></script>
+</body>
+</html>

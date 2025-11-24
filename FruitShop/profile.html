@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thông tin tài khoản</title>
+  <link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-flex">
+    <div class="logo">
+      <img src="assets/img/logo.png" alt="">
+      <span>Trái cây tươi</span>
+    </div>
+
+    <nav class="main-nav">
+      <a href="index.html">Trang chủ</a>
+      <a href="sanpham.html">Sản phẩm</a>
+      <a href="profile.html" class="active">Tài khoản</a>
+    </nav>
+  </div>
+</header>
+
+<section class="account-container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h3>Quản lý tài khoản</h3>
+    <ul>
+      <li class="menu-item active" data-target="profileSection">Thông tin khách hàng</li>
+      <li class="menu-item" data-target="orderSection">Đơn hàng</li>
+    </ul>
+  </aside>
+
+  <!-- NỘI DUNG -->
+  <div class="content">
+
+    <!-- FORM THÔNG TIN -->
+    <section id="profileSection" class="profile-container section active">
+      <h2>Thông tin cá nhân</h2>
+
+      <div class="form-row">
+        <label>Họ và tên</label>
+        <div class="input-group">
+          <input type="text" id="fullname" value="Nguyễn Văn A" disabled>
+          <button class="edit-btn">Sửa</button>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>Số điện thoại</label>
+        <div class="input-group">
+          <input type="text" id="phone" value="0123456789" disabled>
+          <button class="edit-btn">Sửa</button>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>Email</label>
+        <div class="input-group">
+          <input type="text" id="email" value="abc@gmail.com" disabled>
+          <button class="edit-btn">Sửa</button>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>Địa chỉ</label>
+        <div class="input-group">
+          <input type="text" id="address" value="123 Đường ABC, Quận 1, TP.HCM" disabled>
+          <button class="edit-btn">Sửa</button>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>Mật khẩu</label>
+        <div class="input-group">
+          <input type="password" id="password" value="********" disabled>
+          <button class="edit-btn">Sửa</button>
+        </div>
+      </div>
+
+      <div class="save-section">
+        <button class="save-btn">Lưu thay đổi</button>
+      </div>
+    </section>
+
+    <!-- ĐƠN HÀNG -->
+    <section id="orderSection" class="order-section section hidden">
+      <h2>Đơn hàng của bạn</h2>
+
+      <table class="order-table">
+        <thead>
+          <tr>
+            <th>Mã đơn</th>
+            <th>Ngày</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody id="orderList"></tbody>
+      </table>
+    </section>
+
+  </div>
+</section>
+
+<script src="js/profile.js"></script>
+
+</body>
+</html>

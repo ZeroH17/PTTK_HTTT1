@@ -528,3 +528,17 @@ body {
   opacity: 0.7;
 }
 
+#productGridWrapper {
+  max-height: 540px;
+  overflow-y: auto;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+}
+
+#productGrid table thead th {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 10;
+}
+

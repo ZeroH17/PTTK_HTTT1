@@ -173,6 +173,21 @@ body {
   background: #0f6d28;
 }
 
+.cancel-btn {
+  background: #ff4d4d;
+  color: #fff;
+  font-size: 13px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+  margin-left: 8px;
+}
+.cancel-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
 
 /* ===============================
    ORDER TABLE
@@ -358,6 +373,7 @@ input[disabled] {
 .status.pending { color: #ff9800; font-weight: bold; }
 .status.shipping { color: #2196f3; font-weight: bold; }
 .status.completed { color: #4caf50; font-weight: bold; }
+.status.canceled { color: #f44336; font-weight: bold; }
 
 /* ====== MODAL ====== */
 .modal {
@@ -404,4 +420,12 @@ input[disabled] {
   text-align:center;
   color:#999;
   padding:10px 0;
+}
+
+.points-display {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
 }

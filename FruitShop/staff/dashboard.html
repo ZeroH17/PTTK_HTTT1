@@ -24,8 +24,6 @@
     <li><a href="dashboard.html" class="active">Tổng quan</a></li>
     <li><a href="manage_products.html">Sản phẩm</a></li>
     <li><a href="manage_orders.html">Đơn hàng</a></li>
-    <li><a href="manage_users.html">Khách hàng</a></li>
-    <li><a href="#" class="logout-btn">Đăng xuất</a></li>
   </ul>
 </aside>
 
@@ -70,12 +68,18 @@
             <button class="range-btn" data-range="month">Tháng</button>
             <button class="range-btn" data-range="year">Năm</button>
         </div>
+        <div class="date-filter">
+            <label>Từ: <input type="date" id="fromDate"></label>
+            <label>Đến: <input type="date" id="toDate"></label>
+            <button id="filterDateBtn">Xem</button>
+        </div>
     </div>
 
     <canvas id="dashboardChart"></canvas>
 </div>
 
-<!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="../js/dashboard.js" defer></script>
 
 </body>

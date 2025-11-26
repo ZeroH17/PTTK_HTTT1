@@ -62,6 +62,7 @@ list.forEach(order => {
         <option value="Chờ xử lý" ${trangThai === "Chờ xử lý" ? "selected" : ""}>Chờ xử lý</option>
         <option value="Đang giao" ${trangThai === "Đang giao" ? "selected" : ""}>Đang giao</option>
         <option value="Hoàn tất" ${trangThai === "Hoàn tất" ? "selected" : ""}>Hoàn tất</option>
+        <option value="Hoàn đơn" ${trangThai === "Hoàn đơn" ? "selected" : ""}>Hoàn đơn</option>
     </select>`;
 
     tr.innerHTML = `

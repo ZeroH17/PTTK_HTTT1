@@ -204,44 +204,58 @@ function updateCartDisplay() {
   cartItems.innerHTML = '';
 
   cart.forEach((item, index) => {
-    const li = document.createElement('li');
-    li.className = 'cart-item';
+  const li = document.createElement('li');
+  li.className = 'cart-item';
 
-    li.innerHTML = `
-      <span class="cart-name">${item.name}</span>
-      <div class="cart-control">
-        <button class="btn-minus">-</button>
-        <input type="number" min="1" value="${item.qty}">
-        <button class="btn-plus">+</button>
-      </div>
-      <span class="cart-price">${(item.qty * item.price).toLocaleString("vi-VN")}đ</span>
-    `;
+  li.innerHTML = `
+    <span class="cart-name">${item.name}</span>
 
-    const btnMinus = li.querySelector(".btn-minus");
-    const btnPlus = li.querySelector(".btn-plus");
-    const qtyInput = li.querySelector("input");
+    <div class="cart-control">
+      <button class="btn-minus">-</button>
+      <input type="number" min="1" value="${item.qty}">
+      <button class="btn-plus">+</button>
+      <button class="btn-delete">x</button>
+    </div>
 
-    btnMinus.addEventListener("click", () => {
-      if (cart[index].qty > 1) cart[index].qty -= 1;
-      else cart.splice(index, 1);
-      localStorage.setItem('cart', JSON.stringify(cart));
-      updateCartDisplay();
-    });
-    btnPlus.addEventListener("click", () => {
-      cart[index].qty += 1;
-      localStorage.setItem('cart', JSON.stringify(cart));
-      updateCartDisplay();
-    });
-    qtyInput.addEventListener("change", (e) => {
-      let val = parseInt(e.target.value);
-      if (isNaN(val) || val < 1) val = 1;
-      cart[index].qty = val;
-      localStorage.setItem('cart', JSON.stringify(cart));
-      updateCartDisplay();
-    });
+    <span class="cart-price">${(item.qty * item.price).toLocaleString("vi-VN")}đ</span>
+  `;
 
-    cartItems.appendChild(li);
+  const btnMinus = li.querySelector(".btn-minus");
+  const btnPlus = li.querySelector(".btn-plus");
+  const qtyInput = li.querySelector("input");
+  const btnDelete = li.querySelector(".btn-delete");
+
+  btnMinus.addEventListener("click", () => {
+    if (cart[index].qty > 1) cart[index].qty -= 1;
+    else cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartDisplay();
   });
+
+  btnPlus.addEventListener("click", () => {
+    cart[index].qty += 1;
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartDisplay();
+  });
+
+  qtyInput.addEventListener("change", (e) => {
+    let val = parseInt(e.target.value);
+    if (isNaN(val) || val < 1) val = 1;
+    cart[index].qty = val;
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartDisplay();
+  });
+
+  btnDelete.addEventListener("click", () => {
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartDisplay();
+  });
+
+  cartItems.appendChild(li);
+});
+
+
 
   let totalLi = document.getElementById('cartTotal');
   if (!totalLi) {
